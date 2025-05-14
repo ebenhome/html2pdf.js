@@ -179,7 +179,7 @@ Worker.prototype.toPdf = function toPdf() {
     var opt = this.opt;
 
     // Calculate the number of pages.
-    var pxFullHeight = canvas.height;
+    var pxFullHeight = canvas.height * (this.opt.scale || 1);
     var pxPageHeight = Math.floor(canvas.width * this.prop.pageSize.inner.ratio);
     var nPages = Math.ceil(pxFullHeight / pxPageHeight);
 

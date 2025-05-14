@@ -57,7 +57,7 @@
     "webpack-cli": "^4.7.2"
   },
   "scripts": {
-    "build": "npm run clean && webpack --env=prod",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && npm run clean && webpack --env=prod ",
     "build:analyze": "npm run clean && webpack --env=prod --env=analyzer",
     "clean": "rimraf dist/*",
     "dev": "webpack --env=dev",

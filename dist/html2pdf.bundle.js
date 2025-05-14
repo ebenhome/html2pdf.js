@@ -1928,8 +1928,9 @@ Worker.prototype.toPdf = function toPdf() {
     var canvas = this.prop.canvas;
     var opt = this.opt; // Calculate the number of pages.
 
-    var pxFullHeight = canvas.height;
+    var pxFullHeight = canvas.height * (this.opt.scale || 1);
     var pxPageHeight = Math.floor(canvas.width * this.prop.pageSize.inner.ratio);
+    console.log("this.prop.pageSize.in >", this.prop.pageSize.inner);
     var nPages = Math.ceil(pxFullHeight / pxPageHeight); // Define pageHeight separately so it can be trimmed on the final page.
 
     var pageHeight = this.prop.pageSize.inner.height; // Create a one-page canvas to split up the full image.
